@@ -2,7 +2,7 @@
 
 require 'discordrb'
 require 'dotenv/load'
-require '../app/utils/load_commands.rb'
+require './app/utils/load_commands.rb'
 
 Dotenv.require_keys('DISCORD_TOKEN') # required keys and tokens
 

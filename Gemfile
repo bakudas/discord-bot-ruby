@@ -9,3 +9,4 @@ gem 'rspec', '~> 3.10.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'discordrb'
+gem "dockerfile-rails", ">= 1.2", :group => :development
