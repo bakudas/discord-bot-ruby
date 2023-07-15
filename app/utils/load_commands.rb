@@ -2,24 +2,20 @@ require 'dotenv/load'
 require "uri"
 require "net/http"
 require 'discordrb/webhooks'
-require './app/utils/get_data.rb'
+require './app/utils/get_data'
+
+Dir.glob("./app/commands/*.rb").reject { |file| require file }
 
 class LoadCommands
   include Discordrb::Commands::CommandContainer
 
   def initialize bot
-    bot.command :teste do |event|
-      event << 'teste'
-    end
 
-    bot.command :d do |event, side|
-      result = rand(1..side.to_i).round
-      event << "#{event.user.name}, você tirou no dado :game_die:: #{result}"
-    end
-    
-    bot.command :bakratos do |event|
-      bot.send_file(event.channel, File.open('./app/data/images/Bakratos.png', 'r'))
-    end
+    cmd_list = []
+
+    Dir.glob("./app/commands/*.rb").reject { |file| cmd_list << file.split("/").last.split(".").first.capitalize }
+
+    cmd_list.each { |command| bot.include!(Module.const_get command) }
 
     bot.command(:alongamento, description: 'Uma breve seleção de alongamentos para evitar lesões ao passar muito tempo na frente do pc.') do |event|
       bot.send_file(event.channel, File.open('./app/data/images/alongamento.png', 'r'))

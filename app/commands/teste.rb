@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 module Teste
-  include Discordrb::Commands::CommandContainer
-  
-  attr_reader :commands
+  extend Discordrb::Commands::CommandContainer
 
+  command :teste, {
+    help_available: true,
+    usage: '!nimi',
+    min_args: 0
+  } do |event|
+    event << "AAAAAAAAAAAAAAAAAAAAA"
+  end
 end
