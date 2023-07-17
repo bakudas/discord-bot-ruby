@@ -16,10 +16,6 @@ class LoadCommands
     Dir.glob("./app/commands/*.rb").reject { |file| cmd_list << file.split("/").last.split(".").first.capitalize }
 
     cmd_list.each { |command| bot.include!(Module.const_get command) }
-
-    bot.command :aquaman do |event|
-      bot.send_file(event.channel, File.open('./app/data/images/aquaman.png', 'r'))
-    end
     
     bot.command :artenilson do |event|
       bot.send_file(event.channel, File.open('./app/data/images/artenilson.png', 'r'))
