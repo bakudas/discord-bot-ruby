@@ -17,11 +17,6 @@ class LoadCommands
 
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
-    bot.command :regras do |event|
-      regras = ['./app/data/images/regras01.jpg', 'app/data/images/regras02.png', 'app/data/images/regras03.jpg']
-      bot.send_file(event.channel, File.open(regras[rand(3)], 'r'))
-    end
-    
     bot.command :show do |event|
       bot.send_file(event.channel, File.open("./app/data/images/show.gif", 'r'))
     end
