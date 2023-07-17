@@ -17,10 +17,6 @@ class LoadCommands
 
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
-    bot.command(:alongamento, description: 'Uma breve seleção de alongamentos para evitar lesões ao passar muito tempo na frente do pc.') do |event|
-      bot.send_file(event.channel, File.open('./app/data/images/alongamento.png', 'r'))
-    end
-
     bot.command :aquaman do |event|
       bot.send_file(event.channel, File.open('./app/data/images/aquaman.png', 'r'))
     end
