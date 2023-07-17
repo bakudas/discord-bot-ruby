@@ -18,10 +18,6 @@ class LoadCommands
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
     # AUDIOS
-    bot.command :superhot do |event|
-      bot.send_file(event.channel, File.open('./app/data/audio/superhot.mp3', 'r'))
-    end
-    
     bot.command(:eval, help_available: false) do |event, *code|
       break unless event.user.id == 194927916268781569 # Replace number with your ID
       
