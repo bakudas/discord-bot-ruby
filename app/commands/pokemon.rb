@@ -32,11 +32,11 @@ module Pokemon
       return
     end
 
-    # WEBHOOK -> #OFFTOPIC
-    # client = Discordrb::Webhooks::Client.new(url: ENV['WEBHOOK_URL'])
+    # WEBHOOK -> #SERVIDOR_VACAROXA_POKEDEX
+    client = Discordrb::Webhooks::Client.new(url: ENV['WEBHOOK_URL'])
 
     # WEBHOOK -> #SERVIDOR_TESTE
-    client = Discordrb::Webhooks::Client.new(url: ENV['WEBHOOK_URL_TESTE'])
+    # client = Discordrb::Webhooks::Client.new(url: ENV['WEBHOOK_URL_TESTE'])
 
     # EMBED
     client.execute do |builder|

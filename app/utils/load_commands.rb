@@ -77,14 +77,6 @@ class LoadCommands
     bot.command :tucurte do |event|
       bot.send_file(event.channel, File.open("./app/data/images/tucurte.jpg", 'r'))
     end
-    
-    bot.command :gato do |_event|
-      cat_api = "https://api.thecatapi.com/v1/images/search?mime_types=gif"
-    
-      cat = GetData.new cat_api
-    
-      cat.response[0]["url"]
-    end
 
     # AUDIOS
     bot.command :bomdia do |event|
