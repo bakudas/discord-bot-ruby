@@ -17,10 +17,6 @@ class LoadCommands
 
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
-    bot.command :meudeus do |event|
-      bot.send_file(event.channel, File.open('./app/data/images/meudeus.png', 'r'))
-    end
-    
     bot.command :pixelart101 do |event|
       bot.send_file(event.channel, File.open('./app/data/images/pixelart101.png', 'r'))
     end
