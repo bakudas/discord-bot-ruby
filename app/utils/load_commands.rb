@@ -130,20 +130,7 @@ class LoadCommands
       end
     
     end
-    
-    bot.command :policia do |event|
-      event << "<:vacacop:417882011378909184>  <:vacacop:417882011378909184>"
-      event << ":rotating_light: :rotating_light:"
-      event << "#{event.user.name}, declara que para fins de investigação policial,"
-      event << "não ter envolvimento com este grupo e não saber como"
-      event << "está no mesmo, provavelmente foi inserido por terceiros,"
-      event << "declara também que está disposto e apto a colaborar com "
-      event << "as investigações e se apresentar para depoimento "
-      event << "caso seja necessário."
-      event << "<:vacacop:417882011378909184>  <:vacacop:417882011378909184>"
-      event << ":rotating_light: :rotating_light:"
-    end
-    
+
     # AUDIOS
     bot.command :bomdia do |event|
       bot.send_file(event.channel, File.open('./app/data/audio/bomdiaSebby.mp3', 'r'))
