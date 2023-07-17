@@ -17,10 +17,6 @@ class LoadCommands
 
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
-    bot.command :discordo do |event|
-      bot.send_file(event.channel, File.open('./app/data/images/discordo.gif', 'r'))
-    end
-    
     bot.command :effe do |event|
       bot.send_file(event.channel, File.open('./app/data/images/EfeVacinado.jpg', 'r'))
     end
