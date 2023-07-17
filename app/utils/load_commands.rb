@@ -18,10 +18,6 @@ class LoadCommands
     cmd_list.each { |command| bot.include!(Module.const_get command) }
 
     # AUDIOS
-    bot.command :bomdia do |event|
-      bot.send_file(event.channel, File.open('./app/data/audio/bomdiaSebby.mp3', 'r'))
-    end
-    
     bot.command :essabarra do |event|
       bot.send_file(event.channel, File.open('./app/data/audio/essabarra.mp3', 'r'))
     end
