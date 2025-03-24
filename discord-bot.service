@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord Bot Service
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i/code/ruby/discord-bot-ruby
+Environment=RAILS_ENV=production
+ExecStart=/usr/bin/bundle exec ruby start_bot.rb
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
