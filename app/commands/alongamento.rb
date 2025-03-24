@@ -3,7 +3,7 @@
 module Alongamento
   extend Discordrb::Commands::CommandContainer
 
-  command :alogamento, {
+  command :alongamento, {
     help_available: true,
     usage: '!alongamento',
     description: 'Uma breve seleção de alongamentos para evitar lesões ao passar muito tempo na frente do pc.',
